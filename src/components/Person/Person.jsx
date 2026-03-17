@@ -4,7 +4,9 @@ export const Person = ({ person }) => {
   let partnerText = '';
 
   if (isMarried) {
-    partnerText = sex === 'm' ? ` is my wife` : ` is my husband`;
+    partnerText = sex === 'm'
+      ? ` is my wife`
+      : ` is my husband`;
   } else {
     partnerText = 'I am not married';
   }
@@ -13,7 +15,7 @@ export const Person = ({ person }) => {
     <section className="Person">
       <h2 className="Person__name">My name is {name}</h2>
 
-      <p className="Person__age">{age && `I am ${age}`}</p>
+      {age && <p className="Person__age">I am {age}</p>}
 
       <p className="Person__partner">
         {partnerName}
